@@ -1,0 +1,22 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "title": "할일1",
+      "author": "리액트 공부",
+      "isDone": false
+    },
+    {
+      "id": 2,
+      "title": "할일2",
+      "author": "스프링 공부",
+      "isDone": true
+    },
+    {
+      "id": 3,
+      "title": "할일3",
+      "author": "운동",
+      "isDone": false
+    }
+  ]
+}
