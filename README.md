@@ -1,16 +1,25 @@
 ## 구현해야 할 것
 
 - 공통
+
   UI, API 명세서 작성
-  [https://velog.io/@keepcalm/API-기본-개념-패킷-헤더-바디-CRUD-URI-path-variable-명세서#3️⃣-restful-api](https://velog.io/@keepcalm/API-%EA%B8%B0%EB%B3%B8-%EA%B0%9C%EB%85%90-%ED%8C%A8%ED%82%B7-%ED%97%A4%EB%8D%94-%EB%B0%94%EB%94%94-CRUD-URI-path-variable-%EB%AA%85%EC%84%B8%EC%84%9C#3%EF%B8%8F%E2%83%A3-restful-api)
+
 - CRUD
+
   본문 리스트 조회 - 메인 페이지 or 마이페이지
+
   본문 조회
+
   본문 추가
+
   본문 삭제
+
   본문 수정
+
 - 배포
+
   json-server 배포
+
   리액트 프로젝트 배포 S3, vercel 등
 
 ## 요구사항
@@ -36,14 +45,22 @@
    내가 작성한 글만 보여줍니다.
 3. 진행중
    3-1. Mypost가 비활성화인 경우
+
    전체글 중에서 진행중만 보여줍니다.
+
    3-2. Mypost가 활성화인 경우
+
    Mypost 중에서 진행중만 보여줍니다.
+
 4. 완료목록
    3-1. Mypost가 비활성화인 경우
+
    전체글 중에서 완료된 것만 보여줍니다.
+
    3-2. Mypost가 활성화인 경우
+
    Mypost 중에서 완료된 것만 보여줍니다.
+
 5. 로그인
    로그인 페이지로 이동합니다.
 6. 위 화살표
