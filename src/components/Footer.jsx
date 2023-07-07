@@ -2,13 +2,12 @@ import React from "react";
 import { styled } from "styled-components";
 
 function Footer() {
-  return <FooterArea>Footer</FooterArea>;
+  return <FooterArea></FooterArea>;
 }
 
-export default Footer;
+export default React.memo(Footer);
 
 const FooterArea = styled.div`
-  background-color: #ffe066;
   width: 100%;
   height: 200px;
   display: flex;

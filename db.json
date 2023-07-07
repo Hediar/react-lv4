@@ -1,22 +1,90 @@
 {
-  "todos": [
+  "study": [
     {
-      "id": 1,
-      "title": "할일1",
-      "author": "리액트 공부",
+      "id": "1",
+      "title": "Day1",
+      "contents": "리액트 공부",
+      "writer": "user1",
       "isDone": false
     },
     {
-      "id": 2,
-      "title": "할일2",
-      "author": "스프링 공부",
+      "id": "2",
+      "title": "Day2",
+      "contents": "스프링 공부",
+      "writer": "user2",
       "isDone": true
     },
     {
-      "id": 3,
-      "title": "할일3",
-      "author": "운동",
+      "id": "3",
+      "title": "Day3",
+      "contents": "운동",
+      "writer": "user3",
       "isDone": false
+    },
+    {
+      "title": "새로운 제목!",
+      "contents": "대충 내용입력",
+      "writer": "세령",
+      "isDone": false,
+      "id": "k4cZSxS"
+    },
+    {
+      "title": "제목22",
+      "contents": "내요오오옹",
+      "writer": "작성ㅇㅇㅇ",
+      "isDone": false,
+      "id": "k4_eHVg"
+    },
+    {
+      "title": "ㅁ",
+      "contents": "ㅁ",
+      "writer": "ㅁ",
+      "isDone": false,
+      "id": "neF_E0c"
+    },
+    {
+      "title": "1234",
+      "contents": "111122",
+      "writer": "1234",
+      "isDone": false,
+      "id": "BCljrVf"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "userComments": [
+        {
+          "user": "user1",
+          "comment": "오"
+        },
+        {
+          "user": "user2",
+          "comment": "코멘트"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "userComments": [
+        {
+          "user": "user3",
+          "comment": "여기는 id2 게시판의 코멘트입니다!"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "userComments": [
+        {
+          "user": "user3",
+          "comment": "내가쓴글~~"
+        },
+        {
+          "user": "user2",
+          "comment": "코멘트3333"
+        }
+      ]
     }
   ]
 }

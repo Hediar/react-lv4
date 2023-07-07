@@ -1,18 +1,50 @@
 import { styled } from "styled-components";
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
-export const Button = styled.button`
+const Button = (props) => {
+  const navigate = useNavigate();
+
+  const buttonHandler = (role) => {
+    if (role === "move") {
+      navigate(`${props.url}`);
+    } else if (role === "filter") {
+      console.log("filter");
+    } else {
+      console.log("다른기능");
+    }
+  };
+
+  if (props.styleType === "icon") {
+    return (
+      <ButtonIconStyle onClick={(event) => buttonHandler(props.role)}>
+        {props.children}
+      </ButtonIconStyle>
+    );
+  }
+  return <ButtonStyle>{props.children}</ButtonStyle>;
+};
+
+export default Button;
+
+const ButtonStyle = styled.button`
   border: none;
   cursor: pointer;
   border-radius: 8px;
   font-weight: 600;
-  border: 3px solid
-    ${(props) => (props.color === "#000000" ? "rgb(120, 71, 196)" : "#cc99ff")};
-  background-color: rgb(255, 255, 255);
-  color: ${(props) => props.color};
+  background-color: #172b4d;
+  color: white;
   height: 30px;
   width: 75px;
+  margin: 6px;
+
   &:active {
-    background-color: ${(props) =>
-      props.color === "#000000" ? "rgb(102, 58, 168)" : "rgb(219, 106, 80)"};
+    background-color: #234072;
   }
+`;
+
+const ButtonIconStyle = styled.button`
+  cursor: pointer;
+  border: none;
+  background-color: #d8e6e7;
 `;
