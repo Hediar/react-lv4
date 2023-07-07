@@ -11,7 +11,8 @@ function Header() {
           <Button role="move" url={"/"} styleType={"icon"}>
             <IoHomeSharp size="30" />
           </Button>
-          <Button>LogIn</Button>
+          {/* Lv 5 구현할 때 로그인 기능 만들기 
+           <Button>LogIn</Button> */}
         </HeaderNav>
         <HeaderMainArea>
           <h1>스터디 플래너</h1>

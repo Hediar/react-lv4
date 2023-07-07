@@ -10,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 
 function Post() {
   const [title, onChangeTitleHandler, setTitle] = useInput();
+  // TODO : Lv 5 과제에서는 현재 로그인 한 사람으로 입력되게 하기
   const [writer, onChangeWriterHandler, setWriter] = useInput();
   const [contents, onChangeContentHandler, setContent] = useInput();
 

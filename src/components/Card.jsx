@@ -2,15 +2,23 @@ import React from "react";
 import { styled } from "styled-components";
 import { MdDeleteForever } from "react-icons/md";
 import Button from "./Button";
+import { useNavigate } from "react-router-dom";
 
 function Card({ study }) {
+  const navigate = useNavigate();
   return (
     <CardBox done={`${study.isDone}`}>
-      <CardNav>
-        <div>작성자 {study.writer}</div>
-        <MdDeleteForever size="25"></MdDeleteForever>
-      </CardNav>
-      <Cardcontext>{study.title}</Cardcontext>
+      <div
+        onClick={() => {
+          navigate(`/detailstudy/${study.id}`);
+        }}
+      >
+        <CardNav>
+          <div>작성자 {study.writer}</div>
+          <MdDeleteForever size="25"></MdDeleteForever>
+        </CardNav>
+        <Cardcontext>{study.title}</Cardcontext>
+      </div>
       <Cardfooter>
         <div>
           <Button>{study.isDone ? "완료" : "미완료"}</Button>
