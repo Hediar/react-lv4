@@ -4,9 +4,8 @@ import { MdDeleteForever } from "react-icons/md";
 import Button from "./Button";
 
 function Card({ study }) {
-  const { isDone } = study;
   return (
-    <CardBox done={`${isDone}`}>
+    <CardBox done={`${study.isDone}`}>
       <CardNav>
         <div>작성자 {study.writer}</div>
         <MdDeleteForever size="25"></MdDeleteForever>

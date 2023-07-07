@@ -10,6 +10,8 @@ const Button = (props) => {
       navigate(`${props.url}`);
     } else if (role === "filter") {
       console.log("filter");
+    } else {
+      console.log("다른기능");
     }
   };
 
@@ -20,12 +22,7 @@ const Button = (props) => {
       </ButtonIconStyle>
     );
   }
-
-  return (
-    <ButtonStyle onClick={(event) => buttonHandler(props.role)}>
-      {props.children}
-    </ButtonStyle>
-  );
+  return <ButtonStyle>{props.children}</ButtonStyle>;
 };
 
 export default Button;
@@ -42,7 +39,7 @@ const ButtonStyle = styled.button`
   margin: 6px;
 
   &:active {
-    background-color: "#234072";
+    background-color: #234072;
   }
 `;
 
