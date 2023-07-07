@@ -22,7 +22,7 @@ function Header() {
   );
 }
 
-export default Header;
+export default React.memo(Header);
 
 const HeaderArea = styled.div`
   margin: 0 auto;

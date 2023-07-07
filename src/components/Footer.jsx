@@ -5,7 +5,7 @@ function Footer() {
   return <FooterArea></FooterArea>;
 }
 
-export default Footer;
+export default React.memo(Footer);
 
 const FooterArea = styled.div`
   width: 100%;
