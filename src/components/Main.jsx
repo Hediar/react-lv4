@@ -2,14 +2,14 @@ import React from "react";
 import { styled } from "styled-components";
 import GlobalStyle from "../styles/GlobalStyle";
 import { Button } from "./Button";
-import Card from "./Card";
+import CardList from "./CardList";
 
 function Main() {
   return (
     <>
       <GlobalStyle />
       <MainArea>
-        <Card />
+        <CardList />
       </MainArea>
       <Button color="#ffffff">+</Button>
     </>
