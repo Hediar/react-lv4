@@ -53,7 +53,7 @@
   "comments": [
     {
       "id": "1",
-      "user-comments": [
+      "userComments": [
         {
           "user": "user1",
           "comment": "오"
@@ -66,11 +66,25 @@
     },
     {
       "id": "2",
-      "user-comments": []
+      "userComments": [
+        {
+          "user": "user3",
+          "comment": "여기는 id2 게시판의 코멘트입니다!"
+        }
+      ]
     },
     {
       "id": "3",
-      "user-comments": []
+      "userComments": [
+        {
+          "user": "user3",
+          "comment": "내가쓴글~~"
+        },
+        {
+          "user": "user2",
+          "comment": "코멘트3333"
+        }
+      ]
     }
   ]
 }
