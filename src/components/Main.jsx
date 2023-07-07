@@ -10,9 +10,11 @@ function Main() {
       <MainArea>
         <CardList />
       </MainArea>
-      <Button role={"move"} url={"/post"} styleType={"icon"}>
-        <BsFillPlusCircleFill size="30" />
-      </Button>
+      <PostButton>
+        <Button role={"move"} url={"/post"} styleType={"icon"}>
+          <BsFillPlusCircleFill size="50" />
+        </Button>
+      </PostButton>
     </>
   );
 }
@@ -25,4 +27,10 @@ const MainArea = styled.div`
   padding: 30px;
   align-items: center;
   justify-content: center;
+`;
+
+const PostButton = styled.div`
+  position: fixed;
+  bottom: 40px;
+  right: 30px;
 `;
