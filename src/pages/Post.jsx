@@ -25,6 +25,11 @@ function Post() {
 
   const handleSubmitButtonClick = (event) => {
     event.preventDefault();
+    // 유효성 검사
+    // 1. 제목, 내용 모두 입력되어야 한다.
+    if (!title || !writer) {
+      return alert("제목 또는 내용이 입력되지 않았습니다!");
+    }
 
     const newStudyTodo = {
       title,
