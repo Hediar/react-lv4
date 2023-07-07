@@ -3,7 +3,7 @@ import axios from "axios";
 // 조회
 const getStudyList = async () => {
   const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/study`);
-  console.log("res", response);
+  console.log("studyTodo res", response);
   return response.data;
 };
 

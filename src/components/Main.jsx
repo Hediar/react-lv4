@@ -1,17 +1,18 @@
 import React from "react";
 import { styled } from "styled-components";
-import GlobalStyle from "../styles/GlobalStyle";
-import { Button } from "./Button";
+import Button from "./Button";
 import CardList from "./CardList";
+import { BsFillPlusCircleFill } from "react-icons/bs";
 
 function Main() {
   return (
     <>
-      <GlobalStyle />
       <MainArea>
         <CardList />
       </MainArea>
-      <Button color="#ffffff">+</Button>
+      <Button role={"move"} url={"/post"} styleType={"icon"}>
+        <BsFillPlusCircleFill size="30" />
+      </Button>
     </>
   );
 }

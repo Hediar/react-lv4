@@ -2,7 +2,7 @@ import React from "react";
 import { styled } from "styled-components";
 
 function Footer() {
-  return <FooterArea>Footer</FooterArea>;
+  return <FooterArea></FooterArea>;
 }
 
 export default Footer;

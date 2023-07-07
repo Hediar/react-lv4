@@ -1,26 +1,17 @@
 import React from "react";
 import { styled } from "styled-components";
 import { IoHomeSharp } from "react-icons/io5";
-import { useNavigate } from "react-router-dom";
-import { Button } from "./Button";
+import Button from "./Button";
 
 function Header() {
-  const navigate = useNavigate();
-
   return (
     <>
       <HeaderArea>
         <HeaderNav>
-          <IoHomeSharp
-            IoIosClose
-            size="25"
-            onClick={() => {
-              navigate("/");
-            }}
-            style={{ cursor: "pointer" }}
-          />
-          Nav
-          <Button color="#ffffff">LogIn</Button>
+          <Button role="move" url={"/"} styleType={"icon"}>
+            <IoHomeSharp size="30" />
+          </Button>
+          <Button>LogIn</Button>
         </HeaderNav>
         <HeaderMainArea>
           <h1>스터디 플래너</h1>
