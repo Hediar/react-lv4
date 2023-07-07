@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { styled } from "styled-components";
 import { MdDeleteForever } from "react-icons/md";
 import { Button } from "./Button";
 
 function Card({ study }) {
+  useEffect(() => {
+    console.log("완료?", study);
+  }, []);
   return (
-    <CardBox>
+    <CardBox done={study.isDone}>
       <CardNav>
         <div>작성자 {study.writer}</div>
         <MdDeleteForever IoIosClose size="25"></MdDeleteForever>
@@ -13,7 +16,7 @@ function Card({ study }) {
       <Cardcontext>{study.title}</Cardcontext>
       <Cardfooter>
         <div>
-          <Button color="#ffffff">완료/미완료</Button>
+          <Button color="#ffffff">{study.isDone ? "완료" : "미완료"}</Button>
         </div>
       </Cardfooter>
     </CardBox>
@@ -23,7 +26,7 @@ function Card({ study }) {
 export default Card;
 
 const CardBox = styled.div`
-  background-color: #9dc3c1;
+  background-color: ${(props) => (props.done ? "#9dc3c1" : "#6E7783")};
   width: 18rem;
   border-radius: 4px;
   margin: 1rem;
