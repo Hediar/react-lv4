@@ -20,9 +20,11 @@ function Header() {
             style={{ cursor: "pointer" }}
           />
           Nav
-          <Button color="#000000">LogIn</Button>
+          <Button color="#ffffff">LogIn</Button>
         </HeaderNav>
-        <HeaderMainArea>Header</HeaderMainArea>
+        <HeaderMainArea>
+          <h1>스터디 플래너</h1>
+        </HeaderMainArea>
       </HeaderArea>
     </>
   );
@@ -32,17 +34,13 @@ export default Header;
 
 const HeaderArea = styled.div`
   margin: 0 auto;
-  padding: 10px;
-
-  background-color: aqua;
 `;
 
 const HeaderNav = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  background-color: blue;
+  padding: 10px;
 `;
 
 const HeaderMainArea = styled.div`
@@ -54,6 +52,8 @@ const HeaderMainArea = styled.div`
   align-items: center;
   justify-content: center;
   position: relative;
-
-  background-color: burlywood;
+  background-color: white;
+  h1 {
+    background-color: white;
+  }
 `;

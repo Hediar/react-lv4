@@ -10,9 +10,9 @@ function Home() {
       <Header />
       <div>
         HOME
-        <Button color="#000000">전체</Button>
-        <Button color="#000000">진행중</Button>
-        <Button color="#000000">완료 목록</Button>
+        <Button color="#ffffff">전체</Button>
+        <Button color="#ffffff">진행중</Button>
+        <Button color="#ffffff">완료 목록</Button>
       </div>
       <Main />
       <Footer />
