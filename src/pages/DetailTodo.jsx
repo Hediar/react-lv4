@@ -23,7 +23,7 @@ function DetailTodo() {
     data: comments,
   } = useQuery(`${param.id}Comments`, () => getComments(param.id));
 
-  if (isLoading || coisLoading) {
+  if (isLoading) {
     return (
       <>
         <Header />
@@ -31,7 +31,7 @@ function DetailTodo() {
       </>
     );
   }
-  if (isError || coisError) {
+  if (isError) {
     return (
       <>
         <Header />
@@ -53,11 +53,20 @@ function DetailTodo() {
         <div>{`완료 여부: ${study.isDone}`}</div>
         <div>{`내용 : ${study.contents}`}</div>
       </DetailBox>
-      <DetailBox>
-        {comments.userComments?.map((comment) => (
-          <Comments codata={comment} key={comment.user} />
-        ))}
-      </DetailBox>
+      {comments ? (
+        <DetailBox>
+          {comments.userComments?.map((comment) => (
+            <Comments codata={comment} key={comment.user} />
+          ))}
+        </DetailBox>
+      ) : coisError ? (
+        <p>댓글 오류가 발생하였습니다!!</p>
+      ) : coisLoading ? (
+        <p>댓글 로딩중</p>
+      ) : (
+        <p>댓글을 불러오지 못했습니다.</p>
+      )}
+
       <Footer />
     </>
   );

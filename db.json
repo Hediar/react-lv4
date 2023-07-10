@@ -19,7 +19,7 @@
       "title": "Day3",
       "contents": "운동",
       "writer": "user3",
-      "isDone": false
+      "isDone": true
     },
     {
       "title": "새로운 제목!",
@@ -27,6 +27,13 @@
       "writer": "세령",
       "isDone": false,
       "id": "k4cZSxS"
+    },
+    {
+      "title": "새로운 제목",
+      "contents": "대충 새로운 내용",
+      "writer": "나",
+      "isDone": false,
+      "id": "VxHVebI"
     }
   ],
   "comments": [
