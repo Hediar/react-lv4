@@ -28,6 +28,13 @@ function DetailTodo() {
   const [updateTitle, updateTitleHandler, setUpdateTitle] = useInput();
   const [updateContent, updateContentHandler, setUpdateContent] = useInput();
 
+  // 업데이트 내용
+  const newStudy = {
+    ...study,
+    title: updateTitle,
+    contents: updateContent,
+  };
+
   if (isLoading) {
     return (
       <>
@@ -92,8 +99,11 @@ function DetailTodo() {
               <textarea value={updateContent} onChange={updateContentHandler} />
             </div>
             <Button
+              role={"update"}
+              update={newStudy}
               onClick={() => {
-                setUpdateState(true);
+                setUpdateState(!updateState);
+                console.log("저장");
               }}
             >
               저장

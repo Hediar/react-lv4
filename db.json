@@ -2,8 +2,8 @@
   "study": [
     {
       "id": "1",
-      "title": "Day1",
-      "contents": "리액트 공부",
+      "title": "Day1 수정수",
+      "contents": "리액트 공부22",
       "writer": "user1",
       "isDone": false
     },
