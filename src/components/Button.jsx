@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useMutation, useQueryClient } from "react-query";
-import { updateComplete } from "../api/studyTodo";
+import { updateComplete, updateStudy } from "../api/studyTodo";
 
 const Button = (props) => {
   const navigate = useNavigate();
@@ -10,6 +10,14 @@ const Button = (props) => {
   const updateCompleteMutation = useMutation(updateComplete, {
     onSuccess: () => {
       queryClient.invalidateQueries("study");
+    },
+  });
+
+  // 게시글 업데이트
+  const updateDetailMutation = useMutation(updateStudy, {
+    onSuccess: () => {
+      queryClient.invalidateQueries("study");
+      queryClient.invalidateQueries(`${props.update.id}`);
     },
   });
 
@@ -22,11 +30,23 @@ const Button = (props) => {
   };
 
   const basicButtonHandler = (role) => {
-    if (role === "complete") {
-      const newComplete = { id: props.cardKey, isDone: !props.complete };
-      updateCompleteMutation.mutate(newComplete);
-    } else if (role === "filter") {
-      console.log("filter 및 정렬");
+    switch (role) {
+      case "complete": {
+        const newComplete = { id: props.cardKey, isDone: !props.complete };
+        updateCompleteMutation.mutate(newComplete);
+        break;
+      }
+      case "filter": {
+        console.log("filter 및 정렬");
+        break;
+      }
+      case "update": {
+        updateDetailMutation.mutate(props.update);
+        break;
+      }
+      default:
+        console.log("그 외 기능");
+        break;
     }
   };
 
@@ -37,11 +57,28 @@ const Button = (props) => {
       </ButtonIconStyle>
     );
   }
-  return (
-    <ButtonStyle onClick={() => basicButtonHandler(props.role)}>
-      {props.children}
-    </ButtonStyle>
-  );
+  if (props.role) {
+    return (
+      <ButtonStyle
+        onClick={() => {
+          basicButtonHandler(props.role);
+          props.onClick();
+        }}
+      >
+        {props.children}
+      </ButtonStyle>
+    );
+  } else {
+    return (
+      <ButtonStyle
+        onClick={() => {
+          props.onClick();
+        }}
+      >
+        {props.children}
+      </ButtonStyle>
+    );
+  }
 };
 
 export default Button;

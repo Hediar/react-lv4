@@ -16,7 +16,17 @@ const getStudy = async (id) => {
   const response = await axios.get(
     `${process.env.REACT_APP_SERVER_URL}/study/${id}`
   );
+  console.log("detail", response);
   return response.data;
+};
+
+// 게시글 수정
+const updateStudy = async (newStudy) => {
+  const response = await axios.put(
+    `${process.env.REACT_APP_SERVER_URL}/study/${newStudy.id}`,
+    newStudy
+  );
+  console.log("수정", response);
 };
 
 // 게시글 삭제
@@ -57,6 +67,7 @@ export {
   getStudyList,
   addStudyList,
   getStudy,
+  updateStudy,
   deleteStudy,
   updateComplete,
   getComments,
