@@ -38,7 +38,7 @@ function Card({ study }) {
       ></MdDeleteForever>
       <Cardfooter>
         <div>
-          <Button onClick={() => console.log("흠")}>
+          <Button role={"complete"} cardKey={study.id} complete={study.isDone}>
             {study.isDone ? "완료" : "미완료"}
           </Button>
         </div>

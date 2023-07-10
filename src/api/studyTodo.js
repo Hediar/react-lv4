@@ -27,6 +27,15 @@ const deleteStudy = async (id) => {
   console.log("delete", response);
 };
 
+// 완료/미완료 상태 변경
+const updateComplete = async (newComplete) => {
+  const response = await axios.patch(
+    `${process.env.REACT_APP_SERVER_URL}/study/${newComplete.id}`,
+    { isDone: newComplete.isDone }
+  );
+  return response.data;
+};
+
 // 해당 게시판 코멘트 조회
 const getComments = async (id) => {
   const response = await axios.get(
@@ -49,6 +58,7 @@ export {
   addStudyList,
   getStudy,
   deleteStudy,
+  updateComplete,
   getComments,
   deleteComment,
 };
