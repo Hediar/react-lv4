@@ -3,7 +3,6 @@ import axios from "axios";
 // 조회
 const getStudyList = async () => {
   const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/study`);
-  console.log("studyTodo res", response);
   return response.data;
 };
 
@@ -17,8 +16,15 @@ const getStudy = async (id) => {
   const response = await axios.get(
     `${process.env.REACT_APP_SERVER_URL}/study/${id}`
   );
-  console.log("detail res", response);
   return response.data;
+};
+
+// 게시글 삭제
+const deleteStudy = async (id) => {
+  const response = await axios.delete(
+    `${process.env.REACT_APP_SERVER_URL}/study/${id}`
+  );
+  console.log("delete", response);
 };
 
 // 해당 게시판 코멘트 조회
@@ -30,4 +36,19 @@ const getComments = async (id) => {
   return response.data;
 };
 
-export { getStudyList, addStudyList, getStudy, getComments };
+// 코멘트 삭제
+const deleteComment = async (deComments, id) => {
+  await axios.post(
+    `${process.env.REACT_APP_SERVER_URL}/comments/${id}`,
+    deComments
+  );
+};
+
+export {
+  getStudyList,
+  addStudyList,
+  getStudy,
+  deleteStudy,
+  getComments,
+  deleteComment,
+};
