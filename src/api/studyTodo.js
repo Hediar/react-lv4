@@ -16,6 +16,7 @@ const getStudy = async (id) => {
   const response = await axios.get(
     `${process.env.REACT_APP_SERVER_URL}/study/${id}`
   );
+  console.log("detail", response);
   return response.data;
 };
 

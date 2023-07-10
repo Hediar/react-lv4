@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import study from "./modules/study";
+import study from "../modules/study";
 
 const store = configureStore({
   reducer: {

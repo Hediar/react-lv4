@@ -22,11 +22,19 @@ const Button = (props) => {
   };
 
   const basicButtonHandler = (role) => {
-    if (role === "complete") {
-      const newComplete = { id: props.cardKey, isDone: !props.complete };
-      updateCompleteMutation.mutate(newComplete);
-    } else if (role === "filter") {
-      console.log("filter 및 정렬");
+    switch (role) {
+      case "complete": {
+        const newComplete = { id: props.cardKey, isDone: !props.complete };
+        updateCompleteMutation.mutate(newComplete);
+        break;
+      }
+      case "filter": {
+        console.log("filter 및 정렬");
+        break;
+      }
+      default:
+        console.log("그 외 기능");
+        break;
     }
   };
 
@@ -37,11 +45,15 @@ const Button = (props) => {
       </ButtonIconStyle>
     );
   }
-  return (
-    <ButtonStyle onClick={() => basicButtonHandler(props.role)}>
-      {props.children}
-    </ButtonStyle>
-  );
+  if (props.role === "complete") {
+    return (
+      <ButtonStyle onClick={() => basicButtonHandler(props.role)}>
+        {props.children}
+      </ButtonStyle>
+    );
+  } else {
+    return <ButtonStyle onClick={props.onClick}>{props.children}</ButtonStyle>;
+  }
 };
 
 export default Button;
