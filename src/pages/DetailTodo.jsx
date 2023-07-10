@@ -52,20 +52,18 @@ function DetailTodo() {
         </div>
         <div>{`완료 여부: ${study.isDone}`}</div>
         <div>{`내용 : ${study.contents}`}</div>
+        {comments ? (
+          <div>
+            {comments.userComments?.map((comment) => (
+              <Comments codata={comment} key={comment.user} />
+            ))}
+          </div>
+        ) : coisError ? (
+          <p>댓글을 불러오지 못했습니다.</p>
+        ) : coisLoading ? (
+          <p>댓글 로딩중</p>
+        ) : null}
       </DetailBox>
-      {comments ? (
-        <DetailBox>
-          {comments.userComments?.map((comment) => (
-            <Comments codata={comment} key={comment.user} />
-          ))}
-        </DetailBox>
-      ) : coisError ? (
-        <p>댓글 오류가 발생하였습니다!!</p>
-      ) : coisLoading ? (
-        <p>댓글 로딩중</p>
-      ) : (
-        <p>댓글을 불러오지 못했습니다.</p>
-      )}
 
       <Footer />
     </>
