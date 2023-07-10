@@ -17,7 +17,6 @@ function DetailTodo() {
     data: study,
   } = useQuery(`${param.id}`, () => getStudy(param.id));
 
-  console.log("1");
   const {
     isLoading: coisLoading,
     isError: coisError,

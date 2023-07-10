@@ -3,9 +3,22 @@ import { styled } from "styled-components";
 import { MdDeleteForever } from "react-icons/md";
 import Button from "./Button";
 import { useNavigate } from "react-router-dom";
+import useDelete from "../hooks/useDelete";
 
 function Card({ study }) {
   const navigate = useNavigate();
+  const [deleteStudyMutation] = useDelete();
+
+  const findCardId = () => {
+    if (window.confirm("정말 삭제하시겠습니까??")) {
+      //확인
+      deleteStudyMutation.mutate(study.id);
+      alert("삭제되었습니다!");
+    } else {
+      return false;
+    }
+  };
+
   return (
     <CardBox done={`${study.isDone}`}>
       <div
@@ -15,13 +28,19 @@ function Card({ study }) {
       >
         <CardNav>
           <div>작성자 {study.writer}</div>
-          <MdDeleteForever size="25"></MdDeleteForever>
         </CardNav>
         <Cardcontext>{study.title}</Cardcontext>
       </div>
+      <MdDeleteForever
+        size="25"
+        onClick={() => findCardId()}
+        style={{ position: "absolute", top: "10px", right: "10px" }}
+      ></MdDeleteForever>
       <Cardfooter>
         <div>
-          <Button>{study.isDone ? "완료" : "미완료"}</Button>
+          <Button onClick={() => console.log("흠")}>
+            {study.isDone ? "완료" : "미완료"}
+          </Button>
         </div>
       </Cardfooter>
     </CardBox>
@@ -37,6 +56,7 @@ const CardBox = styled.div`
   border-radius: 4px;
   margin: 1rem;
   flex-direction: column;
+  position: relative; // position static외를 넣어주어야 absolute가 동작
   &:hover {
     cursor: pointer;
   }
