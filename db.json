@@ -2,7 +2,7 @@
   "study": [
     {
       "id": "1",
-      "title": "Day1 수정수",
+      "title": "Day1 수정",
       "contents": "리액트 공부22",
       "writer": "user1",
       "isDone": false
@@ -20,43 +20,57 @@
       "contents": "운동",
       "writer": "user3",
       "isDone": false
+    },
+    {
+      "title": "test",
+      "contents": "테스트 내용 ",
+      "writer": "t",
+      "isDone": false,
+      "id": "9QZhx0R"
     }
   ],
   "comments": [
     {
-      "id": "1",
-      "userComments": [
-        {
-          "user": "user1",
-          "comment": "오"
-        },
-        {
-          "user": "user2",
-          "comment": "코멘트"
-        }
-      ]
+      "id": "c1",
+      "user": "user1",
+      "comment": "오",
+      "postid": "1"
     },
     {
-      "id": "2",
-      "userComments": [
-        {
-          "user": "user3",
-          "comment": "여기는 id2 게시판의 코멘트입니다!"
-        }
-      ]
+      "id": "c2",
+      "user": "user2",
+      "comment": "코멘트",
+      "postid": "1"
     },
     {
-      "id": "3",
-      "userComments": [
-        {
-          "user": "user3",
-          "comment": "내가쓴글~~"
-        },
-        {
-          "user": "user2",
-          "comment": "코멘트3333"
-        }
-      ]
+      "id": "c3",
+      "user": "user3",
+      "comment": "여기는 id2 게시판의 코멘트입니다!",
+      "postid": "2"
+    },
+    {
+      "id": "c4",
+      "user": "user3",
+      "comment": "내가쓴글~~",
+      "postid": "3"
+    },
+    {
+      "id": "c5",
+      "user": "user2",
+      "comment": "코멘트3333",
+      "postid": "3"
+    },
+    {
+      "user": "ㅁㅁ",
+      "comment": "ㅁㅁ",
+      "postid": "eaGqofh",
+      "id": "f2KcPwE"
+    },
+    {
+      "user": "댓글",
+      "comment": "추가 성공!",
+      "postid": "9QZhx0R",
+      "id": "rasSGqB"
     }
   ]
 }

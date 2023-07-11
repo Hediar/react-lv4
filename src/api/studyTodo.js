@@ -46,10 +46,21 @@ const updateComplete = async (newComplete) => {
   return response.data;
 };
 
+/* 코멘트 */
+
+// 코멘트 추가
+const addnewComment = async (newComment) => {
+  const response = await axios.post(
+    `${process.env.REACT_APP_SERVER_URL}/comments`,
+    newComment
+  );
+  console.log("comments add res", response);
+};
+
 // 해당 게시판 코멘트 조회
 const getComments = async (id) => {
   const response = await axios.get(
-    `${process.env.REACT_APP_SERVER_URL}/comments/${id}`
+    `${process.env.REACT_APP_SERVER_URL}/comments/?postid=${id}`
   );
   console.log("comments res", response);
   return response.data;
@@ -70,6 +81,7 @@ export {
   updateStudy,
   deleteStudy,
   updateComplete,
+  addnewComment,
   getComments,
   deleteComment,
 };
