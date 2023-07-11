@@ -8,6 +8,7 @@ import { useQuery } from "react-query";
 import Button from "../components/Button";
 import Comments from "../components/Comments";
 import useInput from "../hooks/useInput";
+import Inputcomment from "../components/Inputcomment";
 
 function DetailTodo() {
   const param = useParams();
@@ -76,11 +77,14 @@ function DetailTodo() {
             <div>{`완료 여부: ${study.isDone}`}</div>
             <div>{`내용 : ${study.contents}`}</div>
             {comments ? (
-              <div>
-                {comments.userComments?.map((comment) => (
-                  <Comments codata={comment} key={comment.user} />
-                ))}
-              </div>
+              <>
+                <Inputcomment></Inputcomment>
+                <div>
+                  {comments.userComments?.map((comment) => (
+                    <Comments codata={comment} key={comment.user} />
+                  ))}
+                </div>
+              </>
             ) : coisError ? (
               <p>댓글을 불러오지 못했습니다.</p>
             ) : coisLoading ? (
