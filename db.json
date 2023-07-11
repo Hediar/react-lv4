@@ -20,13 +20,6 @@
       "contents": "운동",
       "writer": "user3",
       "isDone": false
-    },
-    {
-      "title": "test",
-      "contents": "테스트 내용 ",
-      "writer": "t",
-      "isDone": false,
-      "id": "9QZhx0R"
     }
   ],
   "comments": [
@@ -41,12 +34,6 @@
       "user": "user2",
       "comment": "코멘트",
       "postid": "1"
-    },
-    {
-      "id": "c3",
-      "user": "user3",
-      "comment": "여기는 id2 게시판의 코멘트입니다!",
-      "postid": "2"
     },
     {
       "id": "c4",
@@ -67,10 +54,16 @@
       "id": "f2KcPwE"
     },
     {
-      "user": "댓글",
-      "comment": "추가 성공!",
+      "user": "수정",
+      "comment": "1234 수정하기",
       "postid": "9QZhx0R",
-      "id": "rasSGqB"
+      "id": "INtNdBq"
+    },
+    {
+      "user": "user3",
+      "comment": "여기는 Day2 게시글입니다~",
+      "postid": "2",
+      "id": "bVRTN8K"
     }
   ]
 }

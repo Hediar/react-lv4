@@ -66,12 +66,21 @@ const getComments = async (id) => {
   return response.data;
 };
 
-// 코멘트 삭제
-const deleteComment = async (deComments, id) => {
-  await axios.post(
-    `${process.env.REACT_APP_SERVER_URL}/comments/${id}`,
-    deComments
+// 코멘트 수정
+const updateComment = async (newComment) => {
+  const response = await axios.put(
+    `${process.env.REACT_APP_SERVER_URL}/comments/${newComment.id}`,
+    newComment
   );
+  console.log("수정", response);
+};
+
+// 코멘트 삭제
+const deleteComment = async (id) => {
+  const response = await axios.delete(
+    `${process.env.REACT_APP_SERVER_URL}/comments/${id}`
+  );
+  console.log("comment delete", response);
 };
 
 export {
@@ -83,5 +92,6 @@ export {
   updateComplete,
   addnewComment,
   getComments,
+  updateComment,
   deleteComment,
 };
