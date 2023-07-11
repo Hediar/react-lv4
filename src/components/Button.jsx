@@ -7,6 +7,7 @@ import { updateComplete, updateStudy } from "../api/studyTodo";
 const Button = (props) => {
   const navigate = useNavigate();
   const queryClient = useQueryClient();
+  // 완료/미완료 변경
   const updateCompleteMutation = useMutation(updateComplete, {
     onSuccess: () => {
       queryClient.invalidateQueries("study");
@@ -36,8 +37,8 @@ const Button = (props) => {
         updateCompleteMutation.mutate(newComplete);
         break;
       }
-      case "filter": {
-        console.log("filter 및 정렬");
+      case "delete": {
+        console.log("삭제");
         break;
       }
       case "update": {
@@ -45,7 +46,6 @@ const Button = (props) => {
         break;
       }
       default:
-        console.log("그 외 기능");
         break;
     }
   };
@@ -57,28 +57,19 @@ const Button = (props) => {
       </ButtonIconStyle>
     );
   }
-  if (props.role) {
-    return (
-      <ButtonStyle
-        onClick={() => {
-          basicButtonHandler(props.role);
+
+  return (
+    <ButtonStyle
+      onClick={() => {
+        basicButtonHandler(props.role);
+        if (props.onClick) {
           props.onClick();
-        }}
-      >
-        {props.children}
-      </ButtonStyle>
-    );
-  } else {
-    return (
-      <ButtonStyle
-        onClick={() => {
-          props.onClick();
-        }}
-      >
-        {props.children}
-      </ButtonStyle>
-    );
-  }
+        }
+      }}
+    >
+      {props.children}
+    </ButtonStyle>
+  );
 };
 
 export default Button;

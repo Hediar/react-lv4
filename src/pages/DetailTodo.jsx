@@ -2,17 +2,32 @@ import React, { useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { styled } from "styled-components";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { getComments, getStudy } from "../api/studyTodo";
 import { useQuery } from "react-query";
 import Button from "../components/Button";
 import Comments from "../components/Comments";
 import useInput from "../hooks/useInput";
 import Inputcomment from "../components/Inputcomment";
+import useDelete from "../hooks/useDelete";
 
 function DetailTodo() {
   const param = useParams();
+  const navigate = useNavigate();
   const [updateState, setUpdateState] = useState(false);
+
+  const [deleteStudyMutation] = useDelete();
+
+  const deleteButtonHandler = () => {
+    if (window.confirm("정말 삭제하시겠습니까??")) {
+      //확인
+      deleteStudyMutation.mutate(study.id);
+      alert("삭제되었습니다!");
+      navigate("/");
+    } else {
+      return false;
+    }
+  };
 
   const {
     isLoading,
@@ -72,16 +87,22 @@ function DetailTodo() {
               >
                 수정
               </Button>
-              <Button>삭제</Button>
+              <Button
+                onClick={() => {
+                  deleteButtonHandler();
+                }}
+              >
+                삭제
+              </Button>
             </div>
             <div>{`완료 여부: ${study.isDone}`}</div>
             <div>{`내용 : ${study.contents}`}</div>
+            <Inputcomment data={comments}></Inputcomment>
             {comments ? (
               <>
-                <Inputcomment></Inputcomment>
                 <div>
-                  {comments.userComments?.map((comment) => (
-                    <Comments codata={comment} key={comment.user} />
+                  {comments?.map((comment) => (
+                    <Comments codata={comment} key={comment.id} />
                   ))}
                 </div>
               </>
