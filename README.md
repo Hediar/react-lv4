@@ -1,3 +1,7 @@
+## 배포 URL
+
+https://studyplanner-beta.vercel.app/
+
 ## API 명세서
 
 **Users는 작성되지 않음**
