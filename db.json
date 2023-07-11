@@ -1,22 +1,90 @@
 {
-  "todos": [
+  "study": [
     {
-      "id": 1,
-      "title": "할일1",
-      "author": "리액트 공부",
+      "id": "1",
+      "title": "Day1 수정",
+      "contents": "리액트 공부22",
+      "writer": "user1",
       "isDone": false
     },
     {
-      "id": 2,
-      "title": "할일2",
-      "author": "스프링 공부",
+      "id": "2",
+      "title": "Day2",
+      "contents": "스프링 공부",
+      "writer": "user2",
       "isDone": true
     },
     {
-      "id": 3,
-      "title": "할일3",
-      "author": "운동",
+      "id": "3",
+      "title": "Day3",
+      "contents": "운동",
+      "writer": "user3",
       "isDone": false
+    },
+    {
+      "title": "제목",
+      "contents": "내용적음",
+      "writer": "누군가",
+      "isDone": false,
+      "id": "YmoVNhd"
+    },
+    {
+      "title": "제목 입력하기",
+      "contents": "",
+      "writer": "user4",
+      "isDone": true,
+      "id": "V7mwv1P"
+    },
+    {
+      "title": "제목44",
+      "contents": "내용 입력해요",
+      "writer": "추가",
+      "isDone": true,
+      "id": "3m6ekQ0"
+    }
+  ],
+  "comments": [
+    {
+      "id": "c1",
+      "user": "user1",
+      "comment": "오",
+      "postid": "1"
+    },
+    {
+      "id": "c2",
+      "user": "user2",
+      "comment": "코멘트",
+      "postid": "1"
+    },
+    {
+      "id": "c4",
+      "user": "user3",
+      "comment": "내가쓴글~~",
+      "postid": "3"
+    },
+    {
+      "id": "c5",
+      "user": "user2",
+      "comment": "코멘트3333 수정해요",
+      "postid": "3"
+    },
+    {
+      "user": "ㅁㅁ",
+      "comment": "ㅁㅁ",
+      "postid": "eaGqofh",
+      "id": "f2KcPwE"
+    },
+    {
+      "user": "수정",
+      "comment": "1234 수정하기",
+      "postid": "9QZhx0R",
+      "id": "INtNdBq"
+    },
+    {
+      "user": "user3",
+      "comment": "여기는 Day2 게시글입니다~",
+      "postid": "2",
+      "id": "bVRTN8K"
     }
   ]
 }
