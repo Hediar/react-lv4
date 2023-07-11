@@ -37,9 +37,6 @@ const Button = (props) => {
         updateCompleteMutation.mutate(newComplete);
         break;
       }
-      case "delete": {
-        break;
-      }
       case "update": {
         updateDetailMutation.mutate(props.update);
         break;

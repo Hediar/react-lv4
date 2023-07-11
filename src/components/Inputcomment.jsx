@@ -43,8 +43,8 @@ function Inputcomment(props) {
     <>
       <div>
         <div>
-          <label>작성자</label>
-          <input value={inputUser} onChange={inputUserHandler} />
+          <label>이름</label>
+          <input value={inputUser} onChange={inputUserHandler} maxlength="10" />
         </div>
         <textarea
           value={inputComment}

@@ -15,13 +15,13 @@ function CardList() {
   }
 
   return (
-    <div>
+    <>
       <CardListBox>
         {data.map((item) => {
           return <Card key={item.id} study={item} />;
         })}
       </CardListBox>
-    </div>
+    </>
   );
 }
 
@@ -29,6 +29,7 @@ export default CardList;
 
 const CardListBox = styled.div`
   display: flex;
+  padding: 20px;
   margin: -1rem;
   flex-wrap: wrap;
 `;

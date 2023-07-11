@@ -51,15 +51,23 @@ function Post() {
     <>
       <Header />
       <PostBox>
-        <h2>스터디 할 내용 적기</h2>
+        <h2>작성</h2>
         <form onSubmit={handleSubmitButtonClick}>
           <div>
             <label>제목</label>
-            <input value={title} onChange={onChangeTitleHandler} />
+            <input
+              value={title}
+              onChange={onChangeTitleHandler}
+              maxlength="20"
+            />
           </div>
           <div>
             <label>작성자</label>
-            <input value={writer} onChange={onChangeWriterHandler} />
+            <input
+              value={writer}
+              onChange={onChangeWriterHandler}
+              maxlength="10"
+            />
           </div>
           <div>
             <label>내용</label>

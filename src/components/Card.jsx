@@ -27,7 +27,7 @@ function Card({ study }) {
         }}
       >
         <CardNav>
-          <div>작성자 {study.writer}</div>
+          <div>{study.writer}</div>
         </CardNav>
         <Cardcontext>{study.title}</Cardcontext>
       </div>
@@ -64,12 +64,14 @@ const CardBox = styled.div`
 
 const CardNav = styled.div`
   display: flex;
+  font-size: 13px;
   align-items: center;
   justify-content: space-between;
   padding: 10px;
 `;
 
 const Cardcontext = styled.div`
+  font-size: 25px;
   margin: 10px;
   line-height: 1.5;
   height: 3.9375rem;

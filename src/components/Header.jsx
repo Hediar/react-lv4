@@ -15,7 +15,7 @@ function Header() {
            <Button>LogIn</Button> */}
         </HeaderNav>
         <HeaderMainArea>
-          <h1>스터디 플래너</h1>
+          <h1>스터디</h1>
         </HeaderMainArea>
       </HeaderArea>
     </>

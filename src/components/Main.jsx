@@ -24,7 +24,7 @@ export default Main;
 const MainArea = styled.div`
   width: 80%;
   margin: 0 auto;
-  padding: 30px;
+  position: relative;
   align-items: center;
   justify-content: center;
 `;
