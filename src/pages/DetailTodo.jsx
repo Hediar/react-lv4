@@ -74,29 +74,32 @@ function DetailTodo() {
       <DetailBox>
         {!updateState && (
           <>
-            <h1>{`${study.title}`}</h1>
-            <div>
-              <div>{`작성자: ${study.writer}`}</div>
+            <DetailNavTitle
+              done={`${study.isDone}`}
+            >{`${study.title}`}</DetailNavTitle>
+            <DetailNavBox>
+              <div>{`${study.writer}`}</div>
+              <div>
+                <Button
+                  onClick={() => {
+                    setUpdateState(true);
+                    setUpdateTitle(study.title);
+                    setUpdateContent(study.contents);
+                  }}
+                >
+                  수정
+                </Button>
+                <Button
+                  onClick={() => {
+                    deleteButtonHandler();
+                  }}
+                >
+                  삭제
+                </Button>
+              </div>
+            </DetailNavBox>
 
-              <Button
-                onClick={() => {
-                  setUpdateState(true);
-                  setUpdateTitle(study.title);
-                  setUpdateContent(study.contents);
-                }}
-              >
-                수정
-              </Button>
-              <Button
-                onClick={() => {
-                  deleteButtonHandler();
-                }}
-              >
-                삭제
-              </Button>
-            </div>
-            <div>{`완료 여부: ${study.isDone}`}</div>
-            <div>{`내용 : ${study.contents}`}</div>
+            <DetailMainBox>{`${study.contents}`}</DetailMainBox>
             <Inputcomment data={comments}></Inputcomment>
             {comments ? (
               <>
@@ -150,4 +153,30 @@ const DetailBox = styled.div`
   padding: 30px;
   align-items: center;
   justify-content: center;
+`;
+
+const DetailNavBox = styled.div`
+  display: flex;
+  margin: 5px;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 500;
+`;
+
+const DetailNavTitle = styled.div`
+  display: flex;
+  background-color: ${(props) =>
+    props.done === "true" ? "#9dc3c1" : "#6E7783"};
+  padding: 30px;
+  font-size: 30px;
+  font-weight: 500;
+  align-items: center;
+  justify-content: center;
+`;
+
+const DetailMainBox = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
 `;
