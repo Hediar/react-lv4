@@ -5,6 +5,7 @@ import shortid from "shortid";
 import { useParams } from "react-router-dom";
 import { useMutation, useQueryClient } from "react-query";
 import { addnewComment } from "../api/studyTodo";
+import { styled } from "styled-components";
 
 function Inputcomment(props) {
   const [inputUser, inputUserHandler, setInputUser] = useInput();
@@ -40,23 +41,62 @@ function Inputcomment(props) {
   };
 
   return (
-    <>
+    <CommentBox>
       <div>
         <div>
-          <label>이름</label>
-          <input value={inputUser} onChange={inputUserHandler} maxlength="10" />
+          <CommentNameInput
+            value={inputUser}
+            onChange={inputUserHandler}
+            maxlength="10"
+            placeholder="이름을 입력해주세요"
+          />
         </div>
-        <textarea
+
+        <CommentInput
           value={inputComment}
           onChange={inputCommentHandler}
           placeholder="댓글을 입력해주세요"
         />
       </div>
-      <Button role="newcomment" onClick={handleSubmitButtonClick}>
-        저장
-      </Button>
-    </>
+      <ButtonWrapper>
+        <Button role="newcomment" onClick={handleSubmitButtonClick}>
+          저장
+        </Button>
+      </ButtonWrapper>
+    </CommentBox>
   );
 }
 
 export default Inputcomment;
+
+const CommentBox = styled.div`
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  width: 90%;
+`;
+
+const CommentNameInput = styled.input`
+  padding: 5px;
+  outline: none;
+  border: 1px solid white;
+  margin-bottom: 10px;
+  border-radius: 4px;
+`;
+
+const CommentInput = styled.textarea`
+  resize: none;
+  padding: 1rem 1rem 1.5rem;
+  outline: none;
+  border: 1px solid white;
+  margin-bottom: 8px;
+  width: 100%;
+  border-radius: 4px;
+  font-size: 1rem;
+  line-height: 1.75;
+`;
+
+const ButtonWrapper = styled.div`
+  display: flex;
+  justify-content: right;
+`;

@@ -51,33 +51,36 @@ function Post() {
     <>
       <Header />
       <PostBox>
-        <h2>작성</h2>
+        <h2>새 글 작성하기</h2>
         <form onSubmit={handleSubmitButtonClick}>
           <div>
-            <label>제목</label>
-            <input
+            <PostInputTitle
               value={title}
               onChange={onChangeTitleHandler}
+              placeholder="제목"
               maxlength="20"
             />
           </div>
           <div>
-            <label>작성자</label>
-            <input
+            <PostInputName
               value={writer}
               onChange={onChangeWriterHandler}
+              placeholder="이름"
               maxlength="10"
             />
           </div>
           <div>
-            <label>내용</label>
-            <textarea value={contents} onChange={onChangeContentHandler} />
+            <PostContentArea
+              value={contents}
+              onChange={onChangeContentHandler}
+              placeholder="내용을 입력해주세요"
+            />
           </div>
-
-          <Button type="submit">저장</Button>
         </form>
+        <ButtonArea>
+          <Button type="submit">저장</Button>
+        </ButtonArea>
       </PostBox>
-
       <Footer />
     </>
   );
@@ -91,4 +94,38 @@ const PostBox = styled.div`
   padding: 30px;
   align-items: center;
   justify-content: center;
+`;
+
+const PostInputTitle = styled.input`
+  padding: 5px;
+  outline: none;
+  border: 1px solid white;
+  margin-bottom: 10px;
+  border-radius: 4px;
+`;
+
+const PostInputName = styled.input`
+  padding: 5px;
+  outline: none;
+  border: 1px solid white;
+  margin-bottom: 10px;
+  border-radius: 4px;
+`;
+
+const PostContentArea = styled.textarea`
+  resize: none;
+  padding: 1rem 1rem 1.5rem;
+  outline: none;
+  border: 1px solid white;
+  margin-bottom: 8px;
+  height: 650px;
+  width: 100%;
+  border-radius: 4px;
+  font-size: 1rem;
+  line-height: 1.75;
+`;
+
+const ButtonArea = styled.div`
+  display: flex;
+  justify-content: right;
 `;
