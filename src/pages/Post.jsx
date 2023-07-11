@@ -24,11 +24,14 @@ function Post() {
   });
 
   const handleSubmitButtonClick = (event) => {
-    event.preventDefault();
     // 유효성 검사
-    // 1. 제목, 내용 모두 입력되어야 한다.
-    if (!title || !writer) {
-      return alert("제목 또는 내용이 입력되지 않았습니다!");
+    // 제목, 내용 모두 입력되어야 한다.
+    if (!title.trim()) {
+      return alert("제목이 입력되지 않았습니다!");
+    } else if (!writer.trim()) {
+      return alert("내용이 입력되지 않았습니다!");
+    } else if (!contents.trim()) {
+      return alert("내용이 입력되지 않았습니다!");
     }
 
     const newStudyTodo = {
@@ -52,33 +55,39 @@ function Post() {
       <Header />
       <PostBox>
         <h2>새 글 작성하기</h2>
-        <form onSubmit={handleSubmitButtonClick}>
-          <div>
-            <PostInputTitle
-              value={title}
-              onChange={onChangeTitleHandler}
-              placeholder="제목"
-              maxlength="20"
-            />
-          </div>
-          <div>
-            <PostInputName
-              value={writer}
-              onChange={onChangeWriterHandler}
-              placeholder="이름"
-              maxlength="10"
-            />
-          </div>
-          <div>
-            <PostContentArea
-              value={contents}
-              onChange={onChangeContentHandler}
-              placeholder="내용을 입력해주세요"
-            />
-          </div>
-        </form>
+        <div>
+          <PostInputTitle
+            value={title}
+            onChange={onChangeTitleHandler}
+            placeholder="제목"
+            maxlength="20"
+          />
+        </div>
+        <div>
+          <PostInputName
+            value={writer}
+            onChange={onChangeWriterHandler}
+            placeholder="이름"
+            maxlength="10"
+          />
+        </div>
+        <div>
+          <PostContentArea
+            value={contents}
+            onChange={onChangeContentHandler}
+            placeholder="내용을 입력해주세요"
+          />
+        </div>
+
         <ButtonArea>
-          <Button type="submit">저장</Button>
+          <Button
+            type="submit"
+            onClick={() => {
+              handleSubmitButtonClick();
+            }}
+          >
+            저장
+          </Button>
         </ButtonArea>
       </PostBox>
       <Footer />
