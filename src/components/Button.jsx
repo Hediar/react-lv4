@@ -26,7 +26,7 @@ const Button = (props) => {
     if (role === "move") {
       navigate(`${props.url}`);
     } else {
-      console.log("다른기능");
+      return;
     }
   };
 
@@ -38,7 +38,6 @@ const Button = (props) => {
         break;
       }
       case "delete": {
-        console.log("삭제");
         break;
       }
       case "update": {

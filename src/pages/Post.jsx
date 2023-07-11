@@ -20,7 +20,6 @@ function Post() {
   const mutation = useMutation(addStudyList, {
     onSuccess: () => {
       queryClient.invalidateQueries("study");
-      console.log("Post 성공");
     },
   });
 

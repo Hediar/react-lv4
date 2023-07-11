@@ -15,7 +15,6 @@ function Comments({ codata }) {
   const deleteCommentMutation = useMutation(deleteComment, {
     onSuccess: () => {
       queryClient.invalidateQueries(`${codata.postid}Comments`);
-      console.log("comment Delete 성공");
     },
   });
   const deleteCommentHandler = () => {
@@ -32,7 +31,6 @@ function Comments({ codata }) {
   const updateCommentMutation = useMutation(updateComment, {
     onSuccess: () => {
       queryClient.invalidateQueries(`${codata.postid}Comments`);
-      console.log("comment Update 성공");
     },
   });
 

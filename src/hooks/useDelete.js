@@ -6,7 +6,6 @@ const useDelete = () => {
   const deleteStudyMutation = useMutation(deleteStudy, {
     onSuccess: () => {
       queryClient.invalidateQueries("study");
-      console.log("Delete 성공");
     },
   });
 

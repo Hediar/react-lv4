@@ -16,7 +16,6 @@ const getStudy = async (id) => {
   const response = await axios.get(
     `${process.env.REACT_APP_SERVER_URL}/study/${id}`
   );
-  console.log("detail", response);
   return response.data;
 };
 
@@ -26,7 +25,6 @@ const updateStudy = async (newStudy) => {
     `${process.env.REACT_APP_SERVER_URL}/study/${newStudy.id}`,
     newStudy
   );
-  console.log("수정", response);
 };
 
 // 게시글 삭제
@@ -34,7 +32,6 @@ const deleteStudy = async (id) => {
   const response = await axios.delete(
     `${process.env.REACT_APP_SERVER_URL}/study/${id}`
   );
-  console.log("delete", response);
 };
 
 // 완료/미완료 상태 변경
@@ -54,7 +51,6 @@ const addnewComment = async (newComment) => {
     `${process.env.REACT_APP_SERVER_URL}/comments`,
     newComment
   );
-  console.log("comments add res", response);
 };
 
 // 해당 게시판 코멘트 조회
@@ -62,7 +58,6 @@ const getComments = async (id) => {
   const response = await axios.get(
     `${process.env.REACT_APP_SERVER_URL}/comments/?postid=${id}`
   );
-  console.log("comments res", response);
   return response.data;
 };
 
@@ -72,7 +67,6 @@ const updateComment = async (newComment) => {
     `${process.env.REACT_APP_SERVER_URL}/comments/${newComment.id}`,
     newComment
   );
-  console.log("수정", response);
 };
 
 // 코멘트 삭제
@@ -80,7 +74,6 @@ const deleteComment = async (id) => {
   const response = await axios.delete(
     `${process.env.REACT_APP_SERVER_URL}/comments/${id}`
   );
-  console.log("comment delete", response);
 };
 
 export {
